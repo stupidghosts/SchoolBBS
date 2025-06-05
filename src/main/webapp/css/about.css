@@ -1,0 +1,49 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: left;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+.profile div {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  margin-left: 400px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile label {
+  font-weight: bold;
+  display: block;
+}
+.profile input[type="text"], .profile textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.profile textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.profile button {
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  background-color: #235D3A;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile button:hover {
+  background-color: #ddd;
+  color: #235D3A;
+}

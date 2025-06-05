@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.PostMapper">
+
+    <!-- 插入帖子 -->
+    <insert id="createPost" parameterType="com.bbs.pojo.Post">
+        INSERT INTO post (title,author,type,content,date)
+        VALUES (#{title}, #{author}, #{type},#{content},NOW())
+    </insert>
+
+    <!-- 删除帖子 -->
+    <delete id="removePost" parameterType="int">
+        DELETE FROM post WHERE id = #{id}
+    </delete>
+
+    <!-- 根据ID查询帖子 -->
+    <select id="findPostById" parameterType="int" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE id = #{id}
+    </select>
+
+    <!-- 根据标题模糊查询帖子 -->
+    <select id="findPostByTitle" parameterType="string" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE title LIKE CONCAT('%', #{title}, '%') ORDER BY date DESC LIMIT 1
+    </select>
+
+
+    <!-- 根据作者查询帖子 -->
+    <select id="findPostByAuthor" parameterType="string" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE author = #{author}
+    </select>
+
+    <!-- 根据类型查询帖子 -->
+    <select id="findPostByType" parameterType="string" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE type = #{type} limit 7
+    </select>
+
+    <!-- 查询所有帖子 -->
+    <select id="findAllPost" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post
+    </select>
+
+    <!-- 更新帖子 -->
+    <update id="updatePost" parameterType="com.bbs.pojo.Post">
+        UPDATE post
+        SET title = #{title}, content = #{content}, author = #{author}, type = #{type}
+        WHERE id = #{id}
+    </update>
+    <select id="searchPosts" parameterType="string" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+    <!-- 根据类型查询所有帖子 -->
+    <select id="findAllPostByType" parameterType="string" resultType="com.bbs.pojo.Post">
+        SELECT * FROM post WHERE type = #{type}
+    </select>
+
+</mapper>

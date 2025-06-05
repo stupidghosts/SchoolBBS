@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbs.mapper.UserMapper">
+
+    <!-- 查询所有用户 -->
+    <select id="selectAllUsers" resultType="com.bbs.pojo.User">
+        SELECT * FROM user
+    </select>
+
+    <!-- 根据ID查询用户 -->
+    <select id="selectUserById" parameterType="int" resultType="com.bbs.pojo.User">
+        SELECT * FROM user WHERE uid = #{uid}
+    </select>
+
+    <!-- 插入用户 -->
+    <insert id="insertUser" parameterType="com.bbs.pojo.User" keyProperty="uid">
+        INSERT INTO user (uid,name, passwd, sex,rtime)
+        VALUES (#{uid},#{name}, #{passwd}, #{sex},NOW())
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="com.bbs.pojo.User">
+        UPDATE user
+        SET name = #{name}, passwd = #{passwd}, sex = #{sex}
+        WHERE uid = #{uid}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE uid = #{uid}
+    </delete>
+    <select id="findUserByName" parameterType="String" resultType="com.bbs.pojo.User">
+        SELECT * FROM user WHERE name = #{name}
+    </select>
+    <select id="check" parameterType="String" resultType="com.bbs.pojo.User">
+        SELECT * FROM user WHERE name = #{param1} AND passwd = #{param2}
+    </select>
+    <select id="checkName" parameterType="String" resultType="Boolean">
+        SELECT EXISTS(SELECT * FROM user WHERE name = #{name})
+    </select>
+    <select id="findSexById" parameterType="int" resultType="String">
+        SELECT sex FROM user WHERE uid = #{uid}
+    </select>
+    <select id="findIdByName" parameterType="String" resultType="int">
+        SELECT uid FROM user WHERE name = #{name}
+    </select>
+</mapper>

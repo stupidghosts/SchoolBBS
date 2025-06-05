@@ -1,0 +1,31 @@
+.login {
+  height: 200px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 16px;
+  width: 200px;
+  margin-left: 110px;
+}
+
+/* 美化select的下拉箭头 */
+select:after {
+  content: "\25BC"; /* Unicode编码，表示向下的箭头 */
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+/* 美化选项内容 */
+option {
+  padding: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}

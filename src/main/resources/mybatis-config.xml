@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration >
+    <!--导入数据库连接配置文件-->
+    <properties resource="db.properties"/>
+    <settings>
+        <!--开启驼峰式命名映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--log4j日志-->
+        <setting name="logImpl" value="log4j"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+    <!--配置扫描别名-->
+    <typeAliases>
+        <package name="com.bbs.pojo"/>
+        <package name="com.bbs.service"/>
+        <package name="com.bbs.controller"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.bbs.mapper"/>
+    </mappers>
+</configuration>

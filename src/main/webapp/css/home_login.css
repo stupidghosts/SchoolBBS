@@ -1,0 +1,12 @@
+.row {
+  text-align: center;
+}
+
+.row button {
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+
+}
+

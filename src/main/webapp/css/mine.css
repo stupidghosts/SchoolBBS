@@ -1,0 +1,61 @@
+.post-actions{
+  margin-right: 600px;
+}
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.post-title {
+  flex: 1;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  right: 400px;
+}
+
+.delete-btn:hover {
+  background-color: #ddd;
+  color: #235D3A;
+}
+
+.edit-btn {
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  right: 450px;
+}
+
+.edit-btn:hover {
+  background-color: #ddd;
+  color: #235D3A;
+}
+.Mycard {
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.71);
+  /* padding: 20px; */
+  margin-top: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+  animation: cardContainerLoad 2s;
+}
+.Mycard h3 {
+  padding: 10px;
+  background-color: #235D3A;
+  text-align: center;
+  color: white;
+}
