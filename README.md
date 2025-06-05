@@ -1,5 +1,5 @@
 # SchoolBBS
-##本项目不可用于商业用途  
+## 本项目不可用于商业用途  
 一个基于jsp+mybatis的校园贴吧网站  
 
 语言 java：1.8 html JavaScript css  服务器：tomcat 9.0
