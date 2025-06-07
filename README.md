@@ -1,6 +1,5 @@
 # SchoolBBS
-## 本项目不可用于商业用途，旨在大学生互相帮助，包括但不限于期末大作业，小组作业。。。。
-一个基于jsp+mybatis的校园贴吧网站  
+一个基于jsp+mybatis的大学生校园贴吧网站  
 
 语言 java：1.8 html JavaScript css  服务器：tomcat 9.0
 
@@ -22,4 +21,4 @@
 主页展示功能全部实现，包括对帖子的增删改查，用户信息的增删改查  
 ## 拥有一个管理员界面
 ![image](https://github.com/user-attachments/assets/25f34805-0daf-417f-8d91-e4f7100bc92d)
-
+## 本项目不可用于商业用途，旨在大学生互相帮助，包括但不限于期末大作业，小组作业...
