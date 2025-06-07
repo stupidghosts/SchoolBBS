@@ -1,5 +1,5 @@
 # SchoolBBS
-一个基于jsp+mybatis的大学生校园贴吧网站  
+大学生期末大作业————一个基于jsp+mybatis的大学生校园贴吧网站  
 
 语言 java：1.8 html JavaScript css  服务器：tomcat 9.0
 
